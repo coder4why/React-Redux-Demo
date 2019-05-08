@@ -93,16 +93,16 @@ export default class App extends Component{
           <Text style={{
             fontSize: 13,textAlign: 'left',margin: 10,color:this.state.themeColor,lineHeight:23,letterSpacing:1.5
           }}>{desString}</Text>
-          <View style={{justifyContent:"center",flexDirection:'row'}}>
+          <View style={{justifyContent:"center",flexDirection:'row',marginTop:5}}>
             {this._colorViews()}
           </View>
-          <View style={{justifyContent:"center",flexDirection:'row'}}>
-              <Button onPress={()=>this._clickPlus()} color='red' title='➖'></Button>
+          <View style={{justifyContent:"center",flexDirection:'row',marginTop:5}}>
+              <Button onPress={()=>this._clickPlus()} title='➖'></Button>
               {/* 读取当前state的number值 */}
               <Text style={{
-                fontSize: 20,textAlign: 'center',margin: 5,color:this.state.themeColor,fontWeight:"bold"
+                fontSize: 20,textAlign: 'center',margin: 5,color:this.state.themeColor,fontWeight:"bold",width:60
               }}>{this.state.number}</Text>
-              <Button onPress={()=>this._clickAdd()} title="➕" color="red"></Button>
+              <Button onPress={()=>this._clickAdd()} title="➕"></Button>
           </View>
         </View>
       </Provider>
