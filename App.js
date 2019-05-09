@@ -2,7 +2,7 @@
 import { Provider } from 'react-redux';
 import React, {Component} from 'react';
 import {StyleSheet, Text, View,Button,TouchableWithoutFeedback} from 'react-native';
-import configureStore from './store';
+import configureStore from './redux/store';
 const store = configureStore();
 
 /**
@@ -88,10 +88,10 @@ export default class App extends Component{
       <Provider store={store}>
         <View style={styles.container}>
           <Text style={{
-            fontSize: 30,textAlign: 'center',margin: 10,color:this.state.themeColor,fontWeight:"bold",textDecorationLine:'underline'
+            fontSize: 30,textAlign: 'center',margin: 10,color:this.state.theme.themeColor,fontWeight:"bold",textDecorationLine:'underline'
           }}>React-Redux</Text>
           <Text style={{
-            fontSize: 13,textAlign: 'left',margin: 10,color:this.state.themeColor,lineHeight:23,letterSpacing:1.5
+            fontSize: 13,textAlign: 'left',margin: 10,color:this.state.theme.themeColor,lineHeight:23,letterSpacing:1.5
           }}>{desString}</Text>
           <View style={{justifyContent:"center",flexDirection:'row',marginTop:5}}>
             {this._colorViews()}
@@ -100,8 +100,8 @@ export default class App extends Component{
               <Button onPress={()=>this._clickPlus()} title='➖'></Button>
               {/* 读取当前state的number值 */}
               <Text style={{
-                fontSize: 20,textAlign: 'center',margin: 5,color:this.state.themeColor,fontWeight:"bold",width:60
-              }}>{this.state.number}</Text>
+                fontSize: 20,textAlign: 'center',margin: 5,color:this.state.theme.themeColor,fontWeight:"bold",width:60
+              }}>{this.state.number.number}</Text>
               <Button onPress={()=>this._clickAdd()} title="➕"></Button>
           </View>
         </View>

@@ -1,7 +1,7 @@
 'use strict';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import reducer from './reducer';
+import reducer from './IndexReducer';
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
